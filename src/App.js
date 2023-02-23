@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route, HashRouter } from "react-router-dom"
-import Inicio from './components/Inicio'
+import Inicio from './Inicio'
 
 function App() {
   return (

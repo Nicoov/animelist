@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { AnimeList } from "../components/AnimeList";
-import Header from "./Header";
-import '../Styles/inicio.css'
+import { AnimeList } from "./components/AnimeList";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Reviews from "./components/Reviews";
+import './Styles/inicio.css'
 
 
 function Inicio() {
@@ -12,7 +14,6 @@ function Inicio() {
         const temp = await fetch(`https://api.jikan.moe/v4/seasons/now`);
         const resData = await temp.json();
         setListAnime(resData.data)
-        console.log(resData.data)
     };
 
     useEffect(() => {
@@ -24,11 +25,15 @@ function Inicio() {
         <>
             <div><Header /></div>
             <div className="anime-container">
-
                 <AnimeList
                     anime={listAnime}
                 />
             </div>
+            <div className="reviews-container">
+                <Reviews />
+            </div>
+            <div className="footer-container"><Footer /></div>
+
         </>
 
     )
