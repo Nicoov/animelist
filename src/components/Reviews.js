@@ -9,16 +9,9 @@ export default function Reviews() {
         const temp = await fetch(
             `https://api.jikan.moe/v4/recommendations/anime`
         ).then((res) => res.json());
-
         setReviewsAnime(temp.data?.slice(0, 5));
-        console.log(temp.data)
 
     }
-
-
-    // reviewsAnime[0].entry.map((e) => {
-    //     console.log(e)
-    // })
 
 
     useEffect(() => {
@@ -28,21 +21,24 @@ export default function Reviews() {
     return (
 
         <>
+        <div className="review-title">
+            <p>New user recommendations</p>
+        </div>
             {
-                reviewsAnime.map((rev) => {
+                reviewsAnime.map((rev, index) => {
                     return (
                         <>
-                            <div className="reviews-box-container">
+                            <div className="reviews-box-container" key={index}>
                                 <div className="reviews-box">
                                     <div className="box-top">
                                         <div className="profie">
                                             <div className="anime-img">
                                                 {
-                                                    rev.entry.map((e) => {
+                                                    rev.entry.map((e, i) => {
                                                         return (
                                                             <>
                                                                 <img src={e.images.jpg.small_image_url}></img>
-                                                                <div className="reviews">
+                                                                <div className="reviews" key={i}>
                                                                     <a>{e.title}</a>
                                                                 </div>
                                                             </>

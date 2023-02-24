@@ -90,3 +90,8 @@
     font-size: 0.9rem;
     color: #4b4b4b;
 }
+
+.review-title p{
+    font-size: 1.3rem;
+    font-weight: bold;
+}

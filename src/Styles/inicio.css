@@ -1,10 +1,12 @@
 .anime-container{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-wrap: wrap;
     justify-content: center;
+    text-align: center; */
     margin-top: 6rem;
-    text-align: center;
+    width: 70%;
+    margin: 6rem auto;
 }
 
 .footer-container{
