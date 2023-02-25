@@ -10,7 +10,6 @@ export default function Reviews() {
             `https://api.jikan.moe/v4/recommendations/anime`
         ).then((res) => res.json());
         setReviewsAnime(temp.data?.slice(0, 2));
-        console.log(temp.data)
 
     }
 

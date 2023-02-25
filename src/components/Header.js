@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../Styles/header.css'
 
-export default function Header() {
+export default function Header(props) {
 
     const [imageAnime, setImageAnime] = useState([])
 
@@ -25,7 +25,12 @@ export default function Header() {
             <div className="header-container">
                 <h1>Animes</h1>
                 <div className='header-search'>
-                    <input type='search' placeholder='Busca tus animes'></input>
+                    <form
+                        onSubmit={props.handleSearch}
+                    >
+                        <input type='search' value={props.search} onChange={(e) => props.setSearchAnime(e.target.value)} placeholder='Busca tus animes'></input>
+                    </form>
+
                 </div>
             </div>
             <div className='imagen-container'>
