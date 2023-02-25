@@ -1,24 +1,17 @@
-.anime-container{
-    /* width: 100%; */
-    /* display: flex; */
-    /* flex-wrap: wrap;
-    justify-content: center;
-    text-align: center; */
+.anime-container {
     margin-top: 6rem;
     width: 70%;
     margin: 6rem auto;
 }
 
-.footer-container{
+.footer-container {
     width: 100%;
     background-color: #0a141d;
 }
 
-.reviews-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
 
+.reviews-container {
+    margin-top: 6rem;
+    width: 70%;
+    margin: 6rem auto;
+}

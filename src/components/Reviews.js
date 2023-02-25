@@ -9,7 +9,8 @@ export default function Reviews() {
         const temp = await fetch(
             `https://api.jikan.moe/v4/recommendations/anime`
         ).then((res) => res.json());
-        setReviewsAnime(temp.data?.slice(0, 5));
+        setReviewsAnime(temp.data?.slice(0, 2));
+        console.log(temp.data)
 
     }
 
@@ -19,50 +20,34 @@ export default function Reviews() {
     }, [])
 
     return (
-
         <>
-        <div className="review-title">
-            <p>New user recommendations</p>
-        </div>
-            {
-                reviewsAnime.map((rev, index) => {
-                    return (
-                        <>
-                            <div className="reviews-box-container" key={index}>
-                                <div className="reviews-box">
-                                    <div className="box-top">
-                                        <div className="profie">
-                                            <div className="anime-img">
-                                                {
-                                                    rev.entry.map((e, i) => {
-                                                        return (
-                                                            <>
-                                                                <img src={e.images.jpg.small_image_url}></img>
-                                                                <div className="reviews" key={i}>
-                                                                    <a>{e.title}</a>
-                                                                </div>
-                                                            </>
 
-                                                        )
-                                                    })
-                                                }
+            <div className="title-season-anime">
+                <p>New recommendations</p>
+            </div>
+            {reviewsAnime.map((re) => (
+                <div className="container-review">
+                    <div className="inner">
+                        <div className="row">
+                            <div className="col">
+                                <div className="testimonial">
+                                    <div className="name">by {re.user.username}</div>
+                                    {
+                                        re.entry.map((anime) => (
+                                            <div className="stars">{anime.title}</div>
+                                        ))
+                                    }
 
-                                            </div>
-                                            <div className="user-name">
-                                                <strong>{rev.user.username}</strong>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div className="user-comment">
-                                        <p>{rev.content}</p>
-                                    </div>
+                                    <p>
+                                        {re.content}
+                                    </p>
                                 </div>
                             </div>
-                        </>
-                    )
-                })
-            }
+                        </div>
+                    </div>
+                </div>
+            ))}
+
 
         </>
 

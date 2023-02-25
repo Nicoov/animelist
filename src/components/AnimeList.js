@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const AnimeList = ({ anime }) => {
-    console.log(anime)
     var settings = {
         dots: true,
         infinite: false,

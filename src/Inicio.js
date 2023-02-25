@@ -36,11 +36,8 @@ function Inicio() {
         <>
             <div><Header /></div>
             <div className="anime-container"><AnimeList anime={listAnime}/></div>
-            <div className="reviews-container">
-                <Reviews />
-            </div>
+            <div className="reviews-container"><Reviews /></div>
             <div className="footer-container"><Footer /></div>
-
         </>
 
     )
