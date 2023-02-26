@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import '../Styles/header.css'
 
+
 export default function Header(props) {
 
     const [imageAnime, setImageAnime] = useState([])
+
 
     const getImageAnime = async () => {
         const image = await fetch('https://api.jikan.moe/v4/anime/30/pictures');
