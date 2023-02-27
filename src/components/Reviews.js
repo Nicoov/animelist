@@ -24,21 +24,21 @@ export default function Reviews() {
             <div className="title-season-anime">
                 <p>New recommendations</p>
             </div>
-            {reviewsAnime.map((re) => (
+            {reviewsAnime?.map((re) => (
                 <div className="container-review">
                     <div className="inner">
                         <div className="row">
                             <div className="col">
                                 <div className="testimonial">
-                                    <div className="name">by {re.user.username}</div>
+                                    <div className="name">by {re?.user?.username}</div>
                                     {
-                                        re.entry.map((anime) => (
-                                            <div className="stars">{anime.title}</div>
+                                        re?.entry?.map((anime) => (
+                                            <div className="stars">{anime?.title}</div>
                                         ))
                                     }
 
                                     <p>
-                                        {re.content}
+                                        {re?.content}
                                     </p>
                                 </div>
                             </div>
