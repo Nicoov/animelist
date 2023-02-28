@@ -3,6 +3,7 @@ import '../Styles/card.css'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 export const AnimeList = ({ anime }) => {
     var settings = {
@@ -51,11 +52,13 @@ export const AnimeList = ({ anime }) => {
                     anime?.map((anime, index) => (
                         <>
                             <div className="card" key={index}>
-                                <img src={anime.images.jpg.large_image_url}></img>
-                                <h1>{anime.title}</h1>
-                                {/* <div className="card-bottom">
-                                    <p>{anime.episodes}</p>
-                                </div> */}
+                                <NavLink
+                                    key={`${anime.mal_id}-link`}
+                                    to={`/anime/${anime.mal_id}` && `/anime/${anime.mal_id}`}
+                                >
+                                    <img src={anime.images.jpg.large_image_url}></img>
+                                    <h1>{anime.title}</h1>
+                                </NavLink>
                             </div>
 
                         </>
