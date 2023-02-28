@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import '../Styles/header.css'
+
 
 
 export default function Header(props) {
 
     const [imageAnime, setImageAnime] = useState([])
-
+    const [params] = useSearchParams();
+    const id = params.get(`idAnime`)
 
     const getImageAnime = async () => {
         const image = await fetch('https://api.jikan.moe/v4/anime/30/pictures');
@@ -30,9 +33,9 @@ export default function Header(props) {
                     <form
                         onSubmit={props.handleSearch}
                     >
+
                         <input type='search' value={props.search} onChange={(e) => props.setSearchAnime(e.target.value)} placeholder='Busca tus animes'></input>
                     </form>
-
                 </div>
             </div>
             <div className='imagen-container'>

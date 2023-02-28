@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reviews from "./components/Reviews";
 import Search from "./components/SearchAnime"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 
 import './Styles/inicio.css'
@@ -15,9 +15,9 @@ function Inicio() {
 
     const [listAnime, setListAnime] = useState([])
     const [searchAnime, setSearchAnime] = useState("")
-    const [animeData, setAnimeData] = useState([])
 
-    const nav = useNavigate();
+
+    const navigate = useNavigate();
 
 
     const getAnime = async () => {
@@ -25,15 +25,16 @@ function Inicio() {
         setListAnime(temp.data)
     }
 
-    const getSearch = async (searchAnime) => {
-        const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${searchAnime}&sfw`).then((res) => res.json());
-        setAnimeData(temp.data)
-    }
+    // const getSearch = async (searchAnime) => {
+    //     const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${searchAnime}&sfw`).then((res) => res.json());
+    //     setAnimeData(temp.data)
+    // }
 
 
     const handleSearch = (e) => {
         e.preventDefault();
-        getSearch(searchAnime)
+        navigate(`/cartas?searchAnime=${searchAnime}`)
+
     }
 
 
@@ -47,7 +48,6 @@ function Inicio() {
             <div><Header search={searchAnime} setSearchAnime={setSearchAnime} handleSearch={handleSearch} /></div>
             <div className="anime-container"><AnimeList anime={listAnime} /></div>
             <div className="reviews-container"><Reviews /></div>
-            <div className="animesearch-container"><Search search={animeData} /></div>
             <div className="footer-container"><Footer /></div>
         </>
 

@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route exact path="/anime/:id" element={<AnimeInfo />} />
+          <Route exact path="/cartas" element={<Search />} />
         </Routes>
       </>
     </HashRouter>
