@@ -45,7 +45,6 @@ function Inicio() {
 
     }
 
-    console.log(topAnime)
 
     useEffect(() => {
         getAnime()

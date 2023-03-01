@@ -58,8 +58,8 @@ export default function TopAnime({ top }) {
                                     to={`/anime/${top.mal_id}` && `/anime/${top.mal_id}`}
 
                                 >
-                                    <img src={top.images.jpg.large_image_url}></img>
-                                    <h1>{top.title}</h1>
+                                    <img src={top?.images.jpg.large_image_url}></img>
+                                    <h1>{top?.title}</h1>
                                 </NavLink>
 
                             </div>

@@ -8,13 +8,20 @@ import '../Styles/searchanime.css'
 export default function Animesearch() {
 
     const [params] = useSearchParams();
-    const [animeData, setAnimeData] = useState([])
+    const [animeData, setAnimeData] = useState()
     const searchAnime = params.get(`searchAnime`)
     const [error, setError] = useState('')
 
+    const API = `https://api.jikan.moe/v4/anime?q=${searchAnime}&sfw`;
+
     const getSearch = async () => {
-        const temp = await fetch(`https://api.jikan.moe/v4/anime?q=${searchAnime}&sfw`).then((res) => res.json());
-        setAnimeData(temp.data)
+        try {
+            const res = await fetch(API);
+            const data = await res.json();
+            setAnimeData(data)
+        } catch (error) {
+            throw new Error(error)
+        }
     }
 
     useEffect(() => {
@@ -27,7 +34,7 @@ export default function Animesearch() {
         <>
             <div className="anime-search-container">
                 {
-                    animeData?.length !== 0 ? animeData?.map((se) => (
+                    animeData?.data?.length !== 0 ? animeData?.data?.map((se) => (
                         <div className="card-anime-search">
                             <NavLink
                                 key={`${se.mal_id}-link`}
@@ -42,7 +49,7 @@ export default function Animesearch() {
 
                 }
             </div>
-            
+
         </>
 
     )

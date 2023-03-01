@@ -20,9 +20,6 @@ export default function Header(props) {
         getImageAnime()
     }, [])
 
-    // const imagen = imageAnime[0]
-
-    // console.log(imageAnime)
 
 
     return (

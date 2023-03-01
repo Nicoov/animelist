@@ -33,8 +33,7 @@ function AnimeInfo() {
         }
     }, [id])
 
-    console.log(anime)
-    console.log(personajes)
+
 
     return (
         <>
