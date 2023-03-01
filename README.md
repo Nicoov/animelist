@@ -9,7 +9,7 @@ Proyecto pagina de anime
 
 #Frontend:
 
-- Lenguaje: Javascript con React
+- Lenguaje: Javascript con framework react
 
 
 
