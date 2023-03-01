@@ -22,7 +22,7 @@ export default function Reviews() {
         <>
 
             <div className="title-season-anime">
-                <p>New recommendations</p>
+                <p>Nuevas recomendaciones</p>
             </div>
             {reviewsAnime?.map((re) => (
                 <div className="container-review">

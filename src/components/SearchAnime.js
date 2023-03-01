@@ -1,6 +1,8 @@
 import React from "react"
 import { useState, useEffect } from "react";
 import { NavLink, useSearchParams } from "react-router-dom"
+import '../Styles/searchanime.css'
+
 
 
 export default function Animesearch() {
@@ -23,22 +25,24 @@ export default function Animesearch() {
 
     return (
         <>
-            {
-                animeData?.length !== 0 ? animeData?.map((se) => (
-                    <div className="card">
-                        <NavLink
-                            key={`${se.mal_id}-link`}
-                            to={`/anime/${se.mal_id}` && `/anime/${se.mal_id}`}
-                        >
-                            <img src={se.images.jpg.large_image_url}></img>
-                            <h1>{se.title}</h1>
-                        </NavLink>
+            <div className="anime-search-container">
+                {
+                    animeData?.length !== 0 ? animeData?.map((se) => (
+                        <div className="card-anime-search">
+                            <NavLink
+                                key={`${se.mal_id}-link`}
+                                to={`/anime/${se.mal_id}` && `/anime/${se.mal_id}`}
+                            >
+                                <img src={se.images.jpg.large_image_url}></img>
+                                <p>{se.title}</p>
+                            </NavLink>
 
-                    </div>
-                )) : <div><p>No existe</p></div>
+                        </div>
+                    )) : <div><p>No existe</p></div>
 
-            }
-
+                }
+            </div>
+            
         </>
 
     )

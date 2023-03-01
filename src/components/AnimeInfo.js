@@ -46,9 +46,9 @@ function AnimeInfo() {
                 <div className="anime-info">
                     <div className="left-info">
                         <img alt="anime" src={anime?.images?.jpg?.large_image_url}></img>
-                        <h2>Alternative titles</h2>
-                        <span>{anime.title_english || anime.title_japanese}</span>
-                        <h2>Informacion</h2>
+                        <h2>Titulos alternativos</h2>
+                        <span>{anime?.title_english || anime?.title_japanese}</span>
+                        <h2>Información</h2>
                         <div className="container-info">
                             <div>
                                 <span>Type: {anime?.type}</span>
@@ -142,7 +142,7 @@ function AnimeInfo() {
 
                         </div>
                         <h2>Sinopsis</h2>
-                        {anime.synopsis ? anime.synopsis : <p>No existe 😞</p>}
+                        <p> {anime.synopsis ? anime.synopsis : <p>No existe 😞</p>}</p>
                         <h2>Personajes</h2>
                         <div className="container-personajes">
                             {

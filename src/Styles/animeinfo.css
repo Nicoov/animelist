@@ -22,3 +22,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.left-info img{
+    width: 354px;
+    height: 460px;
+    object-fit: cover;
+}

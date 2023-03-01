@@ -44,7 +44,7 @@ export const AnimeList = ({ anime }) => {
     return (
         <>
             <div className="title-season-anime">
-                <p>New season anime</p>
+                <p>Nueva temporada de anime</p>
             </div>
             <Slider {...settings}>
                 {

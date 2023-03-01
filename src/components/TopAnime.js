@@ -3,6 +3,7 @@ import '../Styles/card.css'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 
 export default function TopAnime({ top }) {
@@ -52,8 +53,15 @@ export default function TopAnime({ top }) {
                     top?.map((top, index) => (
                         <>
                             <div className="card" key={index}>
-                                <img src={top.images.jpg.large_image_url}></img>
-                                <h1>{top.title}</h1>
+                                <NavLink
+                                    key={`${top.mal_id}`}
+                                    to={`/anime/${top.mal_id}` && `/anime/${top.mal_id}`}
+
+                                >
+                                    <img src={top.images.jpg.large_image_url}></img>
+                                    <h1>{top.title}</h1>
+                                </NavLink>
+
                             </div>
                         </>
 
