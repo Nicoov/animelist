@@ -41,10 +41,12 @@ export const AnimeList = ({ anime }) => {
         ]
     };
 
+    console.log(anime)
+
     return (
         <>
             <div className="title-season-anime">
-                <p>Nueva temporada de anime</p>
+                <h1>Nueva temporada de anime</h1>
             </div>
             <Slider {...settings}>
                 {
@@ -57,7 +59,7 @@ export const AnimeList = ({ anime }) => {
                                     to={`/anime/${anime.mal_id}` && `/anime/${anime.mal_id}`}
                                 >
                                     <img src={anime.images.jpg.large_image_url}></img>
-                                    <h1>{anime.title}</h1>
+                                    <p>{anime.title}</p>
                                 </NavLink>
                             </div>
 

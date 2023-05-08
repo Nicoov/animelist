@@ -45,7 +45,7 @@ export default function TopAnime({ top }) {
     return (
         <>
             <div className="title-season-anime">
-                <p>Top Anime</p>
+                <h1>Top Anime</h1>
             </div>
             <Slider {...settings}>
                 {
@@ -59,7 +59,7 @@ export default function TopAnime({ top }) {
 
                                 >
                                     <img src={top?.images.jpg.large_image_url}></img>
-                                    <h1>{top?.title}</h1>
+                                    <p>{top?.title}</p>
                                 </NavLink>
 
                             </div>

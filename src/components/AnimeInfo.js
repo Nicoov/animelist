@@ -33,7 +33,7 @@ function AnimeInfo() {
         }
     }, [id])
 
-
+  
 
     return (
         <>
