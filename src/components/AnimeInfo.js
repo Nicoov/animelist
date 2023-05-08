@@ -33,20 +33,22 @@ function AnimeInfo() {
         }
     }, [id])
 
-  
+
 
     return (
         <>
             <Header />
             <div className="anime-info-container">
                 <div className="title-info">
-                    {anime?.title}
+                    <h1>{anime?.title}</h1>
                 </div>
                 <div className="anime-info">
                     <div className="left-info">
                         <img alt="anime" src={anime?.images?.jpg?.large_image_url}></img>
-                        <h2>Titulos alternativos</h2>
-                        <span>{anime?.title_english || anime?.title_japanese}</span>
+                        <div>
+                            <h2>Titulos alternativos</h2>
+                            <span>{anime?.title_english || anime?.title_japanese}</span>
+                        </div>
                         <h2>Información</h2>
                         <div className="container-info">
                             <div>
@@ -165,7 +167,7 @@ function AnimeInfo() {
                             {
                                 anime?.trailer?.embed_url ? (
                                     <div className="trailer-section">
-                                        <h1 className="title">Trailer</h1>
+                                        <h2 className="title">Trailer</h2>
                                         <div align="center">
                                             <iframe
                                                 id="inlineFrameExample"

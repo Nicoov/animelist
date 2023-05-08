@@ -28,7 +28,6 @@ export default function Animesearch() {
         getSearch()
     }, [])
 
-    console.log(animeData)
 
     return (
         <>

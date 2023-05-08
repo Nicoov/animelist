@@ -25,7 +25,7 @@ export default function Header(props) {
     return (
         <>
             <div className="header-container">
-                <h1>Animes</h1>
+                <Link to={"/"} style={{ textDecoration: "none" }}><h1>Animes</h1></Link>
                 <div className='header-search'>
                     <form
                         onSubmit={props.handleSearch}
