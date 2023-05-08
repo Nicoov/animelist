@@ -41,7 +41,6 @@ export const AnimeList = ({ anime }) => {
         ]
     };
 
-    console.log(anime)
 
     return (
         <>

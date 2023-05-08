@@ -143,7 +143,7 @@ function AnimeInfo() {
 
                         </div>
                         <h2>Sinopsis</h2>
-                        <p> {anime.synopsis ? anime.synopsis : <p>No existe 😞</p>}</p>
+                        {anime.synopsis ? anime.synopsis : <p>No existe 😞</p>}
                         <h2>Personajes</h2>
                         <div className="container-personajes">
                             {
